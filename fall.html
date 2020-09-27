@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fall</title>
+    <link rel="stylesheet" href="fall.css">
+</head>
+<body>
+    <div id="game">
+        <div id="block">
+            <div id="black"></div>
+            <div id="white"></div>
+        </div>
+        
+        <div id="ball"></div>
+    </div>
+    <script>
+        const ball = document.getElementById("ball");
+        let ballleft = 600;
+        
+        block();
+
+        function block(){
+
+            setInterval(function block(){
+                let blockleft = Math.ceil(Math.random()*500);
+
+                document.getElementById("white").style.left = blockleft+"px";
+
+            },3000)
+
+
+            
+        }
+
+
+        window.onkeydown = function move(e){
+
+            if(e.keyCode == 37){
+                ballleft = ballleft - 50;
+                document.getElementById("ball").style.left = ballleft+"px";
+            }
+
+            else if(e.keyCode == 39){
+                ballleft = ballleft + 50;
+                document.getElementById("ball").style.left = ballleft+"px";
+            }
+
+        }
+
+    </script>
+</body>
+</html>
